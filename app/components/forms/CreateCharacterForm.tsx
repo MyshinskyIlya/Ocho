@@ -1,7 +1,8 @@
 "use client";
 
-import { CharacterData, createCharacter } from "@/lib/actions/character.action";
-import { userData } from "@/lib/actions/user.actions";
+import { createCharacter } from "@/lib/actions/character.action";
+import { CharacterData } from "@/lib/types/character.type";
+
 import mongoose from "mongoose";
 import React, { useState, ChangeEvent, FormEvent } from "react";
 
