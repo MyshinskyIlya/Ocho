@@ -17,6 +17,7 @@ const Navigation = () => {
                 <Link href={"/admin"} className="text-amber-400">
                     АДМИН
                 </Link>
+                <button onClick={() => signOut()}>Выйти</button>
 
                 {!session && (
                     <button
