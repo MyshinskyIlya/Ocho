@@ -17,15 +17,16 @@ const Navigation = () => {
                 <Link href={"/admin"} className="text-amber-400">
                     АДМИН
                 </Link>
-                <button onClick={() => signOut()}>Выйти</button>
 
-                {!session && (
+                {!session ? (
                     <button
                         className="bg-green-500 px-2 rounded-sm"
                         onClick={() => signIn()}
                     >
                         ВОЙТИ
                     </button>
+                ) : (
+                    <button onClick={() => signOut()}>Выйти</button>
                 )}
             </div>
         </nav>
