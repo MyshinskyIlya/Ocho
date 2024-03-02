@@ -13,13 +13,11 @@ const UserCard = ({ session }: UserCardProps) => {
     return (
         <div className="items-center flex gap-6 bg-card rounded-xl justify-between">
             <div className="flex gap-6 items-center">
-                <Image
+                <img
                     src={session?.user?.image as string}
                     alt="USER IMAGE"
-                    width={58}
-                    height={58}
-                    className="object-contain rounded-md"
-                ></Image>
+                    className="object-contain rounded-md w-12 h-12"
+                ></img>
 
                 <h3 className="text-4xl font-semibold text-amber-400">
                     {session.user.name}
