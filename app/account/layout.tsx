@@ -4,6 +4,7 @@ import { getServerSession } from "next-auth";
 import React from "react";
 import UserCard from "../screens/Account/components/UserCard";
 import Characters from "../components/Characters";
+import { authOptions } from "@/configs/auth";
 
 export const metadata: Metadata = {
     title: "ACCOUNT | OCHO",
@@ -14,7 +15,7 @@ export default async function AccountLayout({
 }: {
     children: React.ReactNode;
 }) {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
 
     if (!session?.user) return null;
 

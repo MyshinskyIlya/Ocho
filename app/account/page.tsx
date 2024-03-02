@@ -4,9 +4,10 @@ import React from "react";
 
 import CharacterInfo from "../components/lists/cards/CharacterInfo";
 import { fetchUserCharacters } from "@/lib/actions/character.action";
+import { authOptions } from "@/configs/auth";
 
 const page = async () => {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
 
     if (!session?.user) return null;
 

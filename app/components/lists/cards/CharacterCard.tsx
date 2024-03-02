@@ -26,10 +26,10 @@ const CharacterCard = ({
             className="flex gap-4 bg-card w-full rounded-lg justify-between bg-opacity-20 shadow-sm shadow-zinc-800 hover:scale-105 transition-all ease-in-out duration-200 cursor-pointer"
         >
             <div>
-                <p className="text-2xl">{name}</p>
+                <p className="text-xl">{name}</p>
             </div>
-            <div className="flex gap-12 justify-between">
-                <p className="text-xl text-yellow-400">Level {level}</p>
+            <div className="flex gap-4 justify-between">
+                <p className="text-xl text-yellow-400">Lvl {level}</p>
                 <p className="text-xl capitalize">
                     {characterClass.slice(0, 3)}
                 </p>

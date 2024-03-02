@@ -5,6 +5,7 @@ import { getServerSession } from "next-auth";
 
 import SessionProvider from "./components/SessionProvider";
 import Navigation from "./components/Navigation";
+import { authOptions } from "@/configs/auth";
 
 // const roboto = Yanone_Kaffeesatz({
 //     subsets: ["cyrillic"],
@@ -27,7 +28,7 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
 
     return (
         <html lang="en" className="bg-black cursor-default">
