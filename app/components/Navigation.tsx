@@ -18,15 +18,13 @@ const Navigation = () => {
                     АДМИН
                 </Link>
 
-                {!session ? (
+                {!session && (
                     <button
                         className="bg-green-500 px-2 rounded-sm"
                         onClick={() => signIn()}
                     >
                         ВОЙТИ
                     </button>
-                ) : (
-                    <button onClick={() => signOut()}>Выйти</button>
                 )}
             </div>
         </nav>
