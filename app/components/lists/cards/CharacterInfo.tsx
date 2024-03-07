@@ -13,10 +13,10 @@ const CharacterInfo = async ({ id }: CharacterInfoProps) => {
     const character = await fetchOneCharacters(id);
 
     return (
-        <div className="flex flex-col bg-card gap-6 h-full">
+        <div className="flex flex-col bg-card gap-6">
             <div className="flex flex-col">
-                <h2 className="text-4xl">{character?.name}</h2>
-                <div className="flex gap-4 text-xl">
+                <h2 className="text-3xl">{character?.name}</h2>
+                <div className="flex gap-4 text-lg">
                     <p>Level {character?.level}</p>
                     <p>-</p>
                     <p className="capitalize">{character?.characterClass}</p>
@@ -24,34 +24,34 @@ const CharacterInfo = async ({ id }: CharacterInfoProps) => {
             </div>
             <div className="grid grid-cols-5 gap-10">
                 <div className="col-span-2 flex justify-between gap-6">
-                    <div className="w-full flex flex-col gap-6">
-                        <h3 className="text-center text-3xl">Характеристики</h3>
-                        <div className="flex flex-col gap-4">
-                            <div className="text-2xl flex justify-between">
+                    <div className="w-full flex flex-col gap-4">
+                        <h3 className="text-center text-2xl">Характеристики</h3>
+                        <div className="flex flex-col gap-1">
+                            <div className="text-xl flex justify-between">
                                 <p>Урон</p>
                                 {character?.damage}
                             </div>
-                            <div className="text-2xl flex justify-between">
+                            <div className="text-xl flex justify-between">
                                 <p>Здоровье</p>
                                 {character?.health}
                             </div>
-                            <div className="text-2xl flex justify-between">
+                            <div className="text-xl flex justify-between">
                                 <p>Сила</p>
                                 {character?.stats.strength}
                             </div>
-                            <div className="text-2xl flex justify-between">
+                            <div className="text-xl flex justify-between">
                                 <p>Интеллект</p>
                                 {character?.stats.intelligence}
                             </div>
-                            <div className="text-2xl flex justify-between">
+                            <div className="text-xl flex justify-between">
                                 <p>Ловкость</p>
                                 {character?.stats.agility}
                             </div>
-                            <div className="text-2xl flex justify-between">
+                            <div className="text-xl flex justify-between">
                                 <p>Выносливость</p>
                                 {character?.stats.endurance}
                             </div>
-                            <div className="text-2xl flex justify-between">
+                            <div className="text-xl flex justify-between">
                                 <p>Дух</p>
                                 {character?.stats.spirit}
                             </div>
@@ -59,8 +59,8 @@ const CharacterInfo = async ({ id }: CharacterInfoProps) => {
                     </div>
                     <div className="border-r border-slate-400 w-6"></div>
                 </div>
-                <div className="col-span-3 flex flex-col gap-6">
-                    <h3 className="text-center text-3xl">Экипировка</h3>
+                <div className="col-span-3 flex flex-col gap-4">
+                    <h3 className="text-center text-2xl">Экипировка</h3>
                     <div className="grid grid-cols-4 gap-4">
                         {character?.inventory.map((item: any) => (
                             <div className="flex bg-card h-24 items-center justify-center text-xl hover:shadow-slate-600 transition-all duration-300 cursor-pointer">
@@ -70,8 +70,8 @@ const CharacterInfo = async ({ id }: CharacterInfoProps) => {
                     </div>
                 </div>
             </div>
-            <div className="mt-4 flex flex-col gap-6">
-                <h3 className="text-3xl">Инвентарь</h3>
+            <div className="mt-4 flex flex-col gap-4">
+                <h3 className="text-2xl">Инвентарь</h3>
                 <div className="grid grid-cols-12 gap-2">
                     {character?.inventory.map((item: any) => (
                         <div className="flex bg-card h-16 items-center justify-center text-lg hover:shadow-slate-600 transition-all duration-300 cursor-pointer">
@@ -81,8 +81,8 @@ const CharacterInfo = async ({ id }: CharacterInfoProps) => {
                 </div>
             </div>
             <div className="flex flex-col gap-4">
-                <h3 className="text-3xl">Описание</h3>
-                <p className="text-xl">
+                <h3 className="text-2xl">Описание</h3>
+                <p className="text-lg">
                     Воины - наставниками мудрости и мастерами боевого искусства.
                     Они представляли собой стойкость и выносливость, способность
                     выдерживать испытания и покорять преграды, что делало их не

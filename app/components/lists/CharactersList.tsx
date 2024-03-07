@@ -11,8 +11,8 @@ const CharactersList = async ({ userId }: CharactersListProps) => {
     const characters = await fetchUserCharacters(userId);
 
     return (
-        <div className="flex flex-col gap-6 bg-yellow-950 bg-card">
-            <h2 className="text-4xl">Персонажи</h2>
+        <div className="flex flex-col gap-4 bg-yellow-950 bg-card">
+            <h2 className="text-3xl">Персонажи</h2>
             <div className="flex gap-2 flex-wrap">
                 {characters.length > 0 ? (
                     characters.map((character) => (

@@ -37,7 +37,7 @@ const Heroes = () => {
     }, []);
 
     return (
-        <main className="grid grid-cols-10 gap-6 p-6">
+        <main className="grid grid-cols-10 gap-6 p-4">
             <HeroesHeroesList users={users}></HeroesHeroesList>
             <HeroesCharactersList
                 characters={characters}

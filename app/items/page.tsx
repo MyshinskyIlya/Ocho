@@ -23,7 +23,7 @@ const page = async () => {
     };
 
     return (
-        <div className="grid grid-cols-10 gap-6 p-6">
+        <div className="grid grid-cols-10 gap-6 p-4">
             <div className="col-span-6 flex flex-col gap-6 p-6 bg-card">
                 <h2 className="text-4xl">Все предметы доступные в мире</h2>
                 <div className="flex flex-col gap-2 flex-wrap">

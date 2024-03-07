@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { getServerSession } from "next-auth";
 import React from "react";
 import UserCard from "../screens/Account/components/UserCard";
-import Characters from "../components/Characters";
+import Characters from "../screens/Account/components/Characters";
 import { authOptions } from "@/configs/auth";
 
 export const metadata: Metadata = {
@@ -30,9 +30,9 @@ export default async function AccountLayout({
     }
     return (
         <div className="account-bg">
-            <div className="bg-black bg-opacity-50">
-                <div className="max-w-[1280px] mx-auto page-h">
-                    <div className="flex flex-col gap-6 items-start p-6">
+            <div className="bg-black bg-opacity-50 h-vh">
+                <div className="max-w-[1280px] mx-auto v-vh">
+                    <div className="flex flex-col gap-4 items-start p-4">
                         {session && (
                             <>
                                 <UserCard session={session}></UserCard>

@@ -3,7 +3,7 @@ import CreateItemForm from "../components/forms/CreateItemForm";
 
 const page = () => {
     return (
-        <div className="p-6">
+        <div className="p-4">
             <CreateItemForm></CreateItemForm>
         </div>
     );

@@ -43,8 +43,8 @@ const CreateCharacterForm = ({ ownerId }: CreateCharacterFormProps) => {
     };
 
     return (
-        <div className="flex flex-col gap-5 bg-yellow-950 bg-opacity-15 bg-card max-h-[420px] shadow-yellow-500 focus-within:shadow-lg focus-within:shadow-yellow-700 transition-all duration-700 ease-out">
-            <h2 className="text-4xl">Создание персонажа</h2>
+        <div className="flex flex-col gap-4 bg-yellow-950 bg-opacity-15 bg-card max-h-[420px] shadow-yellow-500 focus-within:shadow-lg focus-within:shadow-yellow-700 transition-all duration-700 ease-out">
+            <h2 className="text-3xl">Создание персонажа</h2>
             <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
                 <label className="flex flex-col gap-2">
                     <div className="text-slate-200">Имя</div>
@@ -73,10 +73,15 @@ const CreateCharacterForm = ({ ownerId }: CreateCharacterFormProps) => {
                     </select>
                 </label>
                 <button
-                    className="bg-red-800 border border-yellow-800 shadow-md  text-yellow-300 font-semibold rounded-md p-2 mt-2 text-xl"
+                    className={
+                        !characterData.name || characterData.name.length < 3
+                            ? "bg-slate-900 border border-slate-800 shadow-md  text-slate-500 font-semibold rounded-md p-2 mt-2 text-xl"
+                            : "bg-red-800 border border-yellow-800 shadow-md  text-yellow-300 font-semibold rounded-md p-2 mt-2 text-xl"
+                    }
                     type="submit"
+                    disabled={!characterData.name}
                 >
-                    Создать персонажа
+                    Готово
                 </button>
             </form>
         </div>
