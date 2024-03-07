@@ -32,6 +32,17 @@ body {
     }
 }
 
+.h-vh {
+    height: calc(100vh - 44px);
+}
+
+.home-bg {
+    background: url("https://w.forfun.com/fetch/69/69a57edadbc6b3838678adbbde582f25.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .items-bg {
     background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxk8K_A_2nKo-jCgoM1mW6rN2iBvgsB-Jvt6Q2uVTQnsonSzenKDTkGsYMlEv-IwNLad8uFVY2Wz3xTehh_VT80vaBin4CBKBZNCF_svlg52i-MR_pB5ACc0eaUOwDIVogvaFOqiE5_5kXTX9PzfaIjz5KJwOqYMiPRrS8DrskMzQjNJh8cMLDGjWQ/s4000/ARTISTIC-COLORFUL-AI-LANDSCAPE-1192023.png");
     background-size: cover;

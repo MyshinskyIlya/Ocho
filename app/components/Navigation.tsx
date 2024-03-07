@@ -10,6 +10,8 @@ const Navigation = () => {
         <nav className="w-screen flex justify-between py-2 px-6 bg-black items-center text-xl">
             <Link href={"/"}>ОЧО</Link>
             <div className="flex gap-5">
+                <Link href={"/"}>ГЛАВНАЯ</Link>
+                <Link href={"/arena"}>АРЕНА</Link>
                 <Link href={"/heroes"}>ГЕРОИ</Link>
                 <Link href={"/items"}>ПРЕДМЕТЫ</Link>
                 <Link href={"/account"}>ПРОФИЛЬ</Link>

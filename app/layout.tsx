@@ -35,7 +35,7 @@ export default async function RootLayout({
             <body className={underDog.className}>
                 <SessionProvider session={session}>
                     <Navigation></Navigation>
-                    <main>{children}</main>
+                    <main className="">{children}</main>
                 </SessionProvider>
             </body>
         </html>
