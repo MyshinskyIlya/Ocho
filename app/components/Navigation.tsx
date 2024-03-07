@@ -6,6 +6,8 @@ import Link from "next/link";
 const Navigation = () => {
     const { data: session } = useSession();
 
+    console.log(session?.user?.email);
+
     return (
         <nav className="w-screen flex justify-between py-2 px-6 bg-black items-center text-xl">
             <Link href={"/"}>ОЧО</Link>
@@ -16,10 +18,13 @@ const Navigation = () => {
                 <Link href={"/items"}>ПРЕДМЕТЫ</Link>
                 <Link href={"/account"}>ПРОФИЛЬ</Link>
                 <Link href={"/info"}>ИНФО</Link>
-                <Link href={"/admin"} className="text-amber-400">
-                    АДМИН
-                </Link>
 
+                {session?.user?.email ==
+                    process.env.NEXT_PUBLIC_ADMIN_EMAIL && (
+                    <Link href={"/admin"} className="text-amber-400">
+                        АДМИН
+                    </Link>
+                )}
                 {!session && (
                     <button
                         className="bg-green-500 px-2 rounded-sm"
