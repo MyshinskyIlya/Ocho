@@ -37,28 +37,28 @@ body {
 }
 
 .home-bg {
-    background: url("https://w.forfun.com/fetch/69/69a57edadbc6b3838678adbbde582f25.jpeg");
+    background: url("../public/images/backgrounds/home-bg.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .items-bg {
-    background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxk8K_A_2nKo-jCgoM1mW6rN2iBvgsB-Jvt6Q2uVTQnsonSzenKDTkGsYMlEv-IwNLad8uFVY2Wz3xTehh_VT80vaBin4CBKBZNCF_svlg52i-MR_pB5ACc0eaUOwDIVogvaFOqiE5_5kXTX9PzfaIjz5KJwOqYMiPRrS8DrskMzQjNJh8cMLDGjWQ/s4000/ARTISTIC-COLORFUL-AI-LANDSCAPE-1192023.png");
+    background: url("../public/images/backgrounds/items-bg.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .account-bg {
-    background: url("https://static.vecteezy.com/system/resources/thumbnails/020/418/243/original/abstract-background-of-orange-fiery-particles-of-energy-magic-waves-flying-from-the-wind-with-the-effect-of-glow-and-blur-bokeh-4k-60-fps-free-video.jpg");
+    background: url("../public/images/backgrounds/account-bg.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .heroes-bg {
-    background: url("https://www.rabstol.net/uploads/gallery/main/602/rabstol_net_heroes_01.jpg");
+    background: url("../public/images/backgrounds/heroes-bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
