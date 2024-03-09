@@ -43,8 +43,8 @@ const CurrentItem = ({ item }: CurrentItemProps) => {
                 )}
             </div>
             <div
-                className="flex items-center h-[22px] gap-4 shadow-md shadow-neutral-900  bg-black bg-opacity-40 rounded-lg py-4 px-4 cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
-                onMouseEnter={() => console.log(setInfoIsVisible(true))}
+                className="flex items-center h-[22px] gap-4 shadow-md shadow-neutral-900  bg-black bg-opacity-40 rounded-lg py-4 px-4 cursor-pointer hover:scale-105 hover:bg-slate-900 hover:bg-opacity-85 transition-all duration-300 ease-in-out"
+                onMouseEnter={() => setInfoIsVisible(true)}
                 onMouseLeave={() => setInfoIsVisible(false)}
             >
                 <img

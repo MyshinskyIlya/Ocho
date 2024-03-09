@@ -14,7 +14,7 @@ const ItemInfo = ({ item, getClassByRarity }: ItemInfoProps) => {
             <img
                 src={item.img}
                 alt="Item Icon"
-                className="w-12 h-12 mt-2 rounded-lg object-contain border border-slate-700"
+                className="w-12 h-12 rounded-lg object-contain border border-slate-700"
             />
             <div className="bg-card !bg-slate-950 !bg-opacity-80">
                 <div className="flex gap-4">
