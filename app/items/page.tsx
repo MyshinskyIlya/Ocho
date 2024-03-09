@@ -26,12 +26,12 @@ const page = async () => {
         <div className="grid grid-cols-10 gap-6 p-4">
             <div className="col-span-6 flex flex-col gap-6 p-6 bg-card">
                 <h2 className="text-3xl">Все предметы доступные в мире</h2>
-                <div className="flex flex-col gap-2 flex-wrap">
+                <div className="flex flex-col gap-3 flex-wrap">
                     {items.length > 0 ? (
                         items.map((item) => (
                             <div
                                 key={item.name}
-                                className="flex items-center h-[64px] gap-6 shadow-md shadow-slate-800  bg-black bg-opacity-40 rounded-lg py-2 px-4 cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+                                className="flex items-center h-[42px] gap-6 shadow-md shadow-neutral-900  bg-black bg-opacity-40 rounded-lg py-2 px-4 cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
                             >
                                 <img
                                     src={item.img}
@@ -42,12 +42,12 @@ const page = async () => {
                                     <h3
                                         className={
                                             getClassByRarity(item.rarity) +
-                                            " text-xl font-semibold"
+                                            " text-lg font-semibold"
                                         }
                                     >
                                         {item.name}
                                     </h3>
-                                    <p className="italic">
+                                    <p className="italic text-sm">
                                         {item.description.slice(0, 70) +
                                             (item.description.length > 70
                                                 ? "..."
@@ -61,7 +61,7 @@ const page = async () => {
                     )}
                 </div>
             </div>
-            <div className="col-span-4 flex flex-col gap-6 p-6 bg-card cursor-default">
+            <div className="col-span-4 flex flex-col gap-6 p-6 bg-card cursor-default !shadow-purple-600 !shadow-md">
                 <h2 className="text-3xl">Скоро в игре</h2>
                 <div className="flex gap-6">
                     <div className="shadow-sm shadow-purple-700 rounded-xl overflow-hidden">
