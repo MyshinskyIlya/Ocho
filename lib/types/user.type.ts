@@ -1,7 +1,7 @@
 export interface userData {
-    _id: any;
+    _id?: any;
     email: string;
     image: string;
     name: string;
-    emailVerified: boolean | null;
+    emailVerified?: boolean | null;
 }
