@@ -16,7 +16,7 @@ const CreateItemForm = () => {
             endurance: 0,
             spirit: 0,
         },
-        lvl: 0,
+        level: 0,
         rarity: "common",
         img: "",
     });
@@ -44,7 +44,6 @@ const CreateItemForm = () => {
             },
         }));
     };
-
     const handleDamageChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         e.target.value = e.target.value.replace(/^0/, "");
@@ -182,10 +181,10 @@ const CreateItemForm = () => {
                     </label>
                     <input
                         type="number"
-                        id="lvl"
-                        name="lvl"
-                        value={formData.lvl}
-                        onChange={handleDamageChange}
+                        id="level"
+                        name="level"
+                        value={formData.level}
+                        onChange={handleChange}
                         className=" text-white outline-none bg-slate-700 bg-opacity-20 shadow-sm focus:shadow-teal-500 p-1 rounded-lg mt-2"
                     />
                 </div>
@@ -295,7 +294,7 @@ const CreateItemForm = () => {
                         <p>Дух: {formData?.stats?.spirit}</p>
                     </div>
                 </div>
-                <p>Уровень: {formData.lvl}</p>
+                <p>Уровень: {formData.level}</p>
                 <p>Редкость: {formData.rarity}</p>
             </div>
         </div>

@@ -15,7 +15,7 @@ export interface ItemData {
         spirit?: number;
         spell?: Function;
     };
-    lvl: number;
+    level: number;
     rarity: "common" | "uncommon" | "rare" | "epic" | "legendary";
     img: string;
 }
@@ -25,7 +25,7 @@ export const createItem = async ({
     description,
     damage,
     stats,
-    lvl,
+    level,
     rarity,
     img,
 }: ItemData) => {
@@ -37,7 +37,7 @@ export const createItem = async ({
             description,
             damage,
             stats,
-            lvl,
+            level,
             rarity,
             img,
         });

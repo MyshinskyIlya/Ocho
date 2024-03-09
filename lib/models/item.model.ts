@@ -33,6 +33,9 @@ export const ItemSchema = new mongoose.Schema({
         enum: ["common", "uncommon", "rare", "epic", "legendary"],
         default: "commmon",
     },
+    level: {
+        type: Number,
+    },
     img: {
         type: String,
     },
