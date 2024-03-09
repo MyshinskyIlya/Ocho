@@ -5,8 +5,12 @@ import { fetchAllUsers, fetchUserById } from "@/lib/actions/user.actions";
 import React, { useEffect, useState } from "react";
 import HeroesCharactersList from "./lists/HeroesCharactersList";
 import HeroesHeroesList from "./lists/HeroesHeroesList";
+import { userData } from "@/lib/types/user.type";
 
-const Heroes = () => {
+interface HeroesProps {
+    currentUser: userData;
+}
+const Heroes = ({ currentUser }: HeroesProps) => {
     const [users, setUsers] = useState([]);
     const [characters, setCharacters] = useState([]);
 
@@ -38,8 +42,13 @@ const Heroes = () => {
 
     return (
         <main className="grid grid-cols-10 gap-6 p-4">
-            <HeroesHeroesList users={users}></HeroesHeroesList>
+            <HeroesHeroesList
+                currentUser={currentUser}
+                users={users}
+            ></HeroesHeroesList>
             <HeroesCharactersList
+                currentUser={currentUser}
+                users={users}
                 characters={characters}
             ></HeroesCharactersList>
         </main>
