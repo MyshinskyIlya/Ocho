@@ -1,13 +1,15 @@
 "use client";
 
-import { ItemData, createItem } from "@/lib/actions/item.action";
-import Image from "next/image";
+import { createItem } from "@/lib/actions/item.action";
+import { ItemData } from "@/lib/types/item.type";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 
 const CreateItemForm = () => {
     const [formData, setFormData] = useState<ItemData>({
         name: "",
         description: "",
+        characterClass: "warrior",
+        itemClass: "head",
         damage: 0,
         stats: {
             strength: 0,
@@ -60,7 +62,7 @@ const CreateItemForm = () => {
         await createItem({
             ...formData,
         });
-
+        alert("Предмет создан успешно");
         console.log("Отправленные данные:", formData);
     };
 
@@ -192,6 +194,47 @@ const CreateItemForm = () => {
                     <div className="flex gap-2">
                         <input
                             type="radio"
+                            id="warrior"
+                            name="characterClass"
+                            value="warrior"
+                            checked={formData.characterClass === "warrior"}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="warrior" className="text-white">
+                            Warrior
+                        </label>
+                    </div>
+                    <div className="flex gap-2">
+                        <input
+                            type="radio"
+                            id="rogue"
+                            name="characterClass"
+                            value="rogue"
+                            checked={formData.characterClass === "rogue"}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="rogue" className="text-white">
+                            Rogue
+                        </label>
+                    </div>
+                    <div className="flex gap-2">
+                        <input
+                            type="radio"
+                            id="mage"
+                            name="characterClass"
+                            value="mage"
+                            checked={formData.characterClass === "mage"}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="mage" className="text-white">
+                            Mage
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div className="flex gap-2">
+                        <input
+                            type="radio"
                             id="common"
                             name="rarity"
                             value="common"
@@ -255,6 +298,100 @@ const CreateItemForm = () => {
                         </label>
                     </div>
                 </div>
+                <div>
+                    <div className="flex gap-2">
+                        <input
+                            type="radio"
+                            id="head"
+                            name="itemClass"
+                            value="head"
+                            checked={formData.itemClass === "head"}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="head" className="text-white">
+                            Head
+                        </label>
+                    </div>
+                    <div className="flex gap-2">
+                        <input
+                            type="radio"
+                            id="shoulders"
+                            name="itemClass"
+                            value="shoulders"
+                            checked={formData.itemClass === "shoulders"}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="shoulders" className="text-white">
+                            Shoulders
+                        </label>
+                    </div>
+                    <div className="flex gap-2">
+                        <input
+                            type="radio"
+                            id="body"
+                            name="itemClass"
+                            value="body"
+                            checked={formData.itemClass === "body"}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="body" className="text-white">
+                            Body
+                        </label>
+                    </div>
+                    <div className="flex gap-2">
+                        <input
+                            type="radio"
+                            id="gloves"
+                            name="itemClass"
+                            value="gloves"
+                            checked={formData.itemClass === "gloves"}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="gloves" className="text-white">
+                            Gloves
+                        </label>
+                    </div>
+                    <div className="flex gap-2">
+                        <input
+                            type="radio"
+                            id="legs"
+                            name="itemClass"
+                            value="legs"
+                            checked={formData.itemClass === "legs"}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="legs" className="text-white">
+                            Legs
+                        </label>
+                    </div>
+                    <div className="flex gap-2">
+                        <input
+                            type="radio"
+                            id="feet"
+                            name="itemClass"
+                            value="feet"
+                            checked={formData.itemClass === "feet"}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="feet" className="text-white">
+                            Feet
+                        </label>
+                    </div>
+                    <div className="flex gap-2">
+                        <input
+                            type="radio"
+                            id="arm"
+                            name="itemClass"
+                            value="arm"
+                            checked={formData.itemClass === "arm"}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="arm" className="text-white">
+                            Arm
+                        </label>
+                    </div>
+                </div>
+                //----------------------
                 <div className="flex flex-col">
                     <label htmlFor="img" className="text-white">
                         Image:
@@ -283,6 +420,8 @@ const CreateItemForm = () => {
                 ></img>
                 <p>Название предмета: {formData.name}</p>
                 <p>Описание: {formData.description}</p>
+                <p>Класс героя: {formData.characterClass}</p>
+                <p>Класс предмета: {formData.itemClass}</p>
                 <p>Урон: {formData.damage}</p>
                 <div className="flex flex-col gap-4">
                     <h3>Характеристики</h3>

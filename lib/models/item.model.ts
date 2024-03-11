@@ -8,6 +8,19 @@ export const ItemSchema = new mongoose.Schema({
     description: {
         type: String,
     },
+    damage: {
+        type: Number,
+    },
+    characterClass: {
+        type: String,
+        enum: ["warrior", "mage", "rogue"],
+        required: true,
+    },
+    itemClass: {
+        type: String,
+        enum: ["head", "shoulders", "body", "gloves", "legs", "feet", "arm"],
+        required: true,
+    },
     stats: {
         damage: {
             type: Number,

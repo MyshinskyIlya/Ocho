@@ -17,7 +17,6 @@ const Navigation = () => {
                 <Link href={"/heroes"}>ГЕРОИ</Link>
                 <Link href={"/items"}>ПРЕДМЕТЫ</Link>
                 <Link href={"/account"}>ПРОФИЛЬ</Link>
-                <Link href={"/info"}>ИНФО</Link>
 
                 {session?.user?.email ==
                     process.env.NEXT_PUBLIC_ADMIN_EMAIL && (

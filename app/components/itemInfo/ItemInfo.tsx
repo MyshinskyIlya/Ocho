@@ -1,4 +1,4 @@
-import { ItemData } from "@/lib/actions/item.action";
+import { ItemData } from "@/lib/types/item.type";
 import React from "react";
 
 interface ItemInfoProps {
@@ -7,7 +7,51 @@ interface ItemInfoProps {
 }
 
 const ItemInfo = ({ item, getClassByRarity }: ItemInfoProps) => {
-    console.log(item);
+    const charClassColor = (charClass: string): string => {
+        switch (charClass) {
+            case "mage":
+                return "text-purple-500";
+            case "rogue":
+                return "text-yellow-300";
+            case "warrior":
+                return "text-red-600";
+            default:
+                return "";
+        }
+    };
+    const getcharClass = (charClass: string): string => {
+        switch (charClass) {
+            case "mage":
+                return "Маг";
+            case "rogue":
+                return "Разбойник";
+            case "warrior":
+                return "Воин";
+            default:
+                return "";
+        }
+    };
+    const getItemClass = (itemClass: string): string => {
+        switch (itemClass) {
+            case "head":
+                return "Голова";
+            case "shoulders":
+                return "Плечи";
+            case "body":
+                return "Грудь";
+            case "gloves":
+                return "Руки";
+            case "legs":
+                return "Ноги";
+            case "feet":
+                return "Ступни";
+            case "arm":
+                return "Оружие";
+            default:
+                return "";
+        }
+    };
+    console.log(getItemClass(item.itemClass));
 
     return (
         <div className="fixed right-96  flex items-start gap-4 w-96">
@@ -29,6 +73,13 @@ const ItemInfo = ({ item, getClassByRarity }: ItemInfoProps) => {
                 <p className="text-amber-400 text-sm">
                     Уровень предмета: {item.level}
                 </p>
+                <div className="flex justify-between">
+                    <p>{`${getItemClass(item.itemClass)}`}</p>
+                    <p
+                        className={`${charClassColor(item.characterClass)}`}
+                    >{`${getcharClass(item.characterClass)}`}</p>
+                </div>
+                {item.damage && <p>Урон: {item.damage}</p>}
                 <div>
                     <p>
                         {item.stats?.endurance
@@ -56,7 +107,8 @@ const ItemInfo = ({ item, getClassByRarity }: ItemInfoProps) => {
                             : null}
                     </p>
                 </div>
-                <div className="mt-4">
+
+                <div className="mt-2">
                     <p className="font-semibold">Описание: </p>
                     <p className="flex flex-wrap italic text-sm">
                         {item.description}

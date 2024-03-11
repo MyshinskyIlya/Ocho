@@ -8,7 +8,6 @@ export const CharacterSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-
     characterClass: {
         type: String,
         enum: ["warrior", "mage", "rogue"],

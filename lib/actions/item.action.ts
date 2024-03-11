@@ -2,27 +2,13 @@
 
 import Item from "../models/item.model";
 import { connectToDB } from "../mongoose";
-
-export interface ItemData {
-    name: string;
-    description: string;
-    damage?: number;
-    stats?: {
-        strength?: number;
-        intelligence?: number;
-        agility?: number;
-        endurance?: number;
-        spirit?: number;
-        spell?: Function;
-    };
-    level: number;
-    rarity: "common" | "uncommon" | "rare" | "epic" | "legendary";
-    img: string;
-}
+import { ItemData } from "../types/item.type";
 
 export const createItem = async ({
     name,
     description,
+    characterClass,
+    itemClass,
     damage,
     stats,
     level,
@@ -35,6 +21,8 @@ export const createItem = async ({
         await Item.create({
             name,
             description,
+            characterClass,
+            itemClass,
             damage,
             stats,
             level,
