@@ -42,14 +42,16 @@ const page = async () => {
                         ))}
                     </div>
                 </div>
-                <Image
-                    priority
-                    src={"/images/items/battle.webp"}
-                    alt="Battle"
-                    width={180}
-                    height={180}
-                    className="object-contain"
-                ></Image>
+                <div className="flex items-center w-[420px]">
+                    <Image
+                        priority
+                        src={"/images/items/battle.webp"}
+                        alt="Battle"
+                        width={180}
+                        height={180}
+                        className="object-contain"
+                    ></Image>
+                </div>
                 <div className="bg-card flex flex-col gap-4">
                     <h3 className="text-2xl text-center">Выбрать противника</h3>
                     <div className="flex flex-col gap-1">
