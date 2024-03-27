@@ -34,7 +34,7 @@ const page = async () => {
                     <div className="flex flex-col gap-1">
                         {characters.map((char) => (
                             <div
-                                key={char._id}
+                                key={char._id as string}
                                 className="bg-card hover:shadow-sm hover:shadow-amber-600 duration-300 cursor-pointer"
                             >
                                 <span>{char.name}</span>
@@ -43,6 +43,7 @@ const page = async () => {
                     </div>
                 </div>
                 <Image
+                    priority
                     src={"/images/items/battle.webp"}
                     alt="Battle"
                     width={180}
@@ -54,7 +55,7 @@ const page = async () => {
                     <div className="flex flex-col gap-1">
                         {enemies.map((char) => (
                             <div
-                                key={char._id}
+                                key={char._id as string}
                                 className="bg-card hover:shadow-sm hover:shadow-red-600 duration-300 cursor-pointer"
                             >
                                 <span>{char.name}</span>
