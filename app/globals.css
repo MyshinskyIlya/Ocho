@@ -57,6 +57,13 @@ body {
     background-repeat: no-repeat;
 }
 
+.arena-bg {
+    background: url("../public/images/backgrounds/arena-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .heroes-bg {
     background: url("../public/images/backgrounds/heroes-bg.jpg");
     background-size: cover;

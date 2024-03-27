@@ -1,4 +1,5 @@
 export interface CharacterData {
+    _id?: any;
     ownerId?: string;
     name: string;
     characterClass?: "warrior" | "mage" | "rogue" | "" | string;
