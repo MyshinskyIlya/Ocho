@@ -12,12 +12,21 @@ const Characters = async ({ children }: { children: React.ReactNode }) => {
 
     const userInfo = await fetchUser(session?.user?.email as string);
 
-    const characters = await fetchUserCharacters(userInfo?.id);
+    const userCharacters = await fetchUserCharacters(userInfo?.id);
 
     return (
         <div className="grid grid-cols-10 w-full gap-4">
             <div className="col-span-3 flex flex-col gap-4">
-                <CharactersList userId={userInfo?._id}></CharactersList>
+                {userCharacters.length > 0 && (
+                    <div className="flex flex-col gap-4 bg-yellow-950 bg-card">
+                        <h2 className="text-3xl">Персонажи</h2>
+                        <CharactersList
+                            characters={userCharacters}
+                            className="flex gap-2 flex-wrap"
+                        ></CharactersList>
+                    </div>
+                )}
+
                 <CreateCharacterForm
                     ownerId={userInfo?._id.toString()}
                 ></CreateCharacterForm>

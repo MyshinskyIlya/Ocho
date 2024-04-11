@@ -30,7 +30,7 @@ export default async function AccountLayout({
     }
     return (
         <div className="account-bg">
-            <div className="bg-black bg-opacity-50 h-vh flex justify-center items">
+            <div className="bg-black overflow-auto bg-opacity-50 h-vh flex justify-center items">
                 <div className="max-w-[1280px] mx-auto v-vh">
                     <div className="flex flex-col gap-4 items-start p-4">
                         {session && (

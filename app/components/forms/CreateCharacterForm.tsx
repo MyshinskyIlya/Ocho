@@ -5,17 +5,26 @@ import { CharacterData } from "@/lib/types/character.type";
 
 import mongoose from "mongoose";
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import CreateCharacterButton from "../UI/CreateCharacterButton";
 
 interface CreateCharacterFormProps {
     ownerId?: string;
 }
 
+export type CreateStatus = "loading" | "pending" | "rejected" | "complited";
+
 const CreateCharacterForm = ({ ownerId }: CreateCharacterFormProps) => {
-    const [characterData, setCharacterData] = useState<CharacterData>({
+    if (!ownerId) {
+        return;
+    }
+
+    const [characterData, setCharacterData] = useState<any>({
         ownerId: ownerId,
         name: "",
         characterClass: "warrior",
     });
+
+    const [createStatus, setcreateStatus] = useState<CreateStatus>("pending");
 
     const handleInputChangeName = (e: ChangeEvent<HTMLInputElement>) => {
         setCharacterData({
@@ -34,12 +43,19 @@ const CreateCharacterForm = ({ ownerId }: CreateCharacterFormProps) => {
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
-        await createCharacter({
-            ...characterData,
-        });
-
-        console.log("Отправленные данные:", characterData);
+        setcreateStatus("loading");
+        try {
+            await createCharacter({
+                ...characterData,
+            });
+            setcreateStatus("complited");
+            console.log("Отправленные данные:", characterData);
+            window.location.reload();
+        } catch (error) {
+            alert("Ошибка");
+            setcreateStatus("rejected");
+            console.log(error);
+        }
     };
 
     return (
@@ -72,17 +88,15 @@ const CreateCharacterForm = ({ ownerId }: CreateCharacterFormProps) => {
                         <option value="rogue">Разбойник</option>
                     </select>
                 </label>
-                <button
+                <CreateCharacterButton
+                    characterData={characterData}
                     className={
-                        !characterData.name || characterData.name.length < 3
+                        characterData.name.length < 3
                             ? "bg-slate-900 border border-slate-800 shadow-md  text-slate-500 font-semibold rounded-md p-2 mt-2 text-xl"
-                            : "bg-red-800 border border-yellow-800 shadow-md  text-yellow-300 font-semibold rounded-md p-2 mt-2 text-xl"
+                            : "bg-red-800 border border-red-950 shadow-md  text-yellow-300 font-semibold rounded-md p-2 mt-2 text-xl hover:bg-red-800 hover:border-yellow-800 duration-300"
                     }
-                    type="submit"
-                    disabled={!characterData.name}
-                >
-                    Готово
-                </button>
+                    createStatus={createStatus}
+                ></CreateCharacterButton>
             </form>
         </div>
     );

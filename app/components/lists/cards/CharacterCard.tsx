@@ -3,6 +3,7 @@ import React from "react";
 
 interface CharacterCardProps {
     id: any;
+    cardClassName?: string;
     name: string;
     characterClass: string;
     stats: any;
@@ -13,6 +14,7 @@ interface CharacterCardProps {
 
 const CharacterCard = ({
     id,
+    cardClassName,
     name,
     characterClass,
     health,
@@ -23,7 +25,10 @@ const CharacterCard = ({
     return (
         <Link
             href={`/account/${id}`}
-            className="flex gap-4 bg-card w-full rounded-lg justify-between bg-opacity-20 shadow-sm shadow-zinc-800 hover:scale-105 transition-all ease-in-out duration-200 cursor-pointer"
+            className={
+                cardClassName ||
+                `flex gap-4 bg-card w-full rounded-lg justify-between bg-opacity-20 shadow-sm shadow-zinc-800 hover:scale-105 transition-all ease-in-out duration-200 cursor-pointer`
+            }
         >
             <div>
                 <p className="text-lg">{name}</p>

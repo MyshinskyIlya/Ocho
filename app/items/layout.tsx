@@ -12,7 +12,7 @@ export default function ItemsLayout({
 }) {
     return (
         <div className="items-bg">
-            <div className="bg-black bg-opacity-50">
+            <div className="bg-black overflow-auto bg-opacity-50 h-vh flex justify-center items">
                 <div className="max-w-[1280px] mx-auto page-h">{children}</div>
             </div>
         </div>

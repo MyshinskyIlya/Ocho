@@ -58,7 +58,7 @@ body {
 }
 
 .arena-bg {
-    background: url("../public/images/backgrounds/arena-bg.jpg");
+    background-image: url("../public/images/backgrounds/arena-bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
