@@ -41,17 +41,19 @@ const Heroes = ({ currentUser }: HeroesProps) => {
     }, []);
 
     return (
-        <main className="grid grid-cols-10 gap-6 p-4">
-            <HeroesHeroesList
-                currentUser={currentUser}
-                users={users}
-            ></HeroesHeroesList>
-            <HeroesCharactersList
-                currentUser={currentUser}
-                users={users}
-                characters={characters}
-            ></HeroesCharactersList>
-        </main>
+        characters.length > 0 && (
+            <main className="grid grid-cols-10 gap-6 p-4">
+                <HeroesHeroesList
+                    currentUser={currentUser}
+                    users={users}
+                ></HeroesHeroesList>
+                <HeroesCharactersList
+                    currentUser={currentUser}
+                    users={users}
+                    characters={characters}
+                ></HeroesCharactersList>
+            </main>
+        )
     );
 };
 

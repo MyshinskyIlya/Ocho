@@ -10,8 +10,6 @@ const page = async () => {
 
     const userInfo = await fetchUser(currentUser?.user?.email as string);
 
-    console.log(userInfo);
-
     return <Heroes currentUser={userInfo as userData}></Heroes>;
 };
 
