@@ -1,6 +1,6 @@
 import React from "react";
 
-const loading = () => {
+const LoadingHeroes = () => {
     return (
         <div
             role="status"
@@ -27,4 +27,4 @@ const loading = () => {
     );
 };
 
-export default loading;
+export default LoadingHeroes;
