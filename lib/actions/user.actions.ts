@@ -4,7 +4,7 @@ import User from "../models/user.model";
 import { connectToDB } from "../mongoose";
 import { userData } from "../types/user.type";
 
-export const createUser = async ({ email, image, name }: userData) => {
+export const createUser = async ({ email, image, name, role }: userData) => {
     try {
         connectToDB();
 
@@ -12,6 +12,7 @@ export const createUser = async ({ email, image, name }: userData) => {
             email,
             image,
             name,
+            role,
         });
     } catch (error: any) {
         throw new Error("FAILED TO CREATE USERS");

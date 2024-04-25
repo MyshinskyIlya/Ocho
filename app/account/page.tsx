@@ -18,6 +18,7 @@ const page = async () => {
             email: session.user.email as string,
             image: session.user.image as string,
             name: session.user.name as string,
+            role: "USER",
         });
     }
 
