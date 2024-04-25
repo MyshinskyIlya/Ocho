@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { signIn } from "next-auth/react";
+import CookiePage from "./CookiePage";
 
-export default function Home() {
+export default function NewUserPage() {
     return (
-        <div className="mx-auto max-w-[580px] h-vh">
+        <div className="mx-auto max-w-[580px] h-screen">
             <div className="flex flex-col text-center py-28 gap-6">
                 <div className="flex flex-col gap-4">
                     <h1 className="text-8xl">Очо</h1>
@@ -19,10 +21,11 @@ export default function Home() {
                 </div>
                 <div className="flex gap-8 text-2xl justify-center mt-4">
                     <Link
-                        href={"/arena"}
+                        href={"/account"}
                         className="bg-card hover:text-red-600 hover:bg-black transition-all duration-300"
+                        onClick={() => signIn()}
                     >
-                        Арена
+                        Начать Игру
                     </Link>
                     <Link
                         href={"https://github.com/MyshinskyIlya/Ocho"}
@@ -30,6 +33,9 @@ export default function Home() {
                     >
                         О Нас
                     </Link>
+                    <div>
+                        <CookiePage></CookiePage>
+                    </div>
                 </div>
             </div>
         </div>

@@ -4,6 +4,7 @@ export const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
+        unique: true,
     },
     image: {
         type: String,
@@ -11,6 +12,10 @@ export const UserSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
+    },
+    role: {
+        type: String,
+        require: true,
     },
 });
 

@@ -6,6 +6,11 @@ import { getServerSession } from "next-auth";
 import SessionProvider from "./components/SessionProvider";
 import Navigation from "./components/Navigation";
 import { authOptions } from "@/configs/auth";
+import { userData } from "@/lib/types/user.type";
+import { fetchUser } from "@/lib/actions/user.actions";
+
+import { signIn } from "next-auth/react";
+import NewUserPage from "./screens/Home/NewUserPage";
 
 // const roboto = Yanone_Kaffeesatz({
 //     subsets: ["cyrillic"],
@@ -29,12 +34,24 @@ export default async function RootLayout({
 }>) {
     const session = await getServerSession(authOptions);
 
+    const userInfo: userData = await fetchUser(session?.user?.email as string);
+
     return (
         <html lang="en" className="bg-black cursor-default">
             <body className={underDog.className}>
                 <SessionProvider session={session}>
-                    <Navigation></Navigation>
-                    <main className="">{children}</main>
+                    {session ? (
+                        <>
+                            <Navigation></Navigation>
+                            <main className="home-bg">
+                                <div>{children}</div>
+                            </main>
+                        </>
+                    ) : (
+                        <main className="home-bg">
+                            <NewUserPage></NewUserPage>
+                        </main>
+                    )}
                 </SessionProvider>
             </body>
         </html>
