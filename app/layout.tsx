@@ -43,14 +43,10 @@ export default async function RootLayout({
                     {session ? (
                         <>
                             <Navigation></Navigation>
-                            <main className="home-bg">
-                                <div>{children}</div>
-                            </main>
+                            <div>{children}</div>
                         </>
                     ) : (
-                        <main className="home-bg">
-                            <NewUserPage></NewUserPage>
-                        </main>
+                        <NewUserPage></NewUserPage>
                     )}
                 </SessionProvider>
             </body>
